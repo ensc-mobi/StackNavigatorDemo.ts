@@ -1,7 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import { View, Text, Button } from "react-native";
 
-export default class ModalScreen extends React.Component {
+interface ModelScreenProps {
+  navigation: any;
+}
+
+export default class ModalScreen extends Component<ModelScreenProps, {}> {
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>

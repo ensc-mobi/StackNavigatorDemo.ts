@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, Button, Image } from "react-native";
+import { HomeScreenProps } from "./Types";
 
 export class LogoTitle extends Component<{}, {}> {
   render() {
@@ -10,10 +11,6 @@ export class LogoTitle extends Component<{}, {}> {
       />
     );
   }
-}
-
-interface HomeScreenProps {
-  navigation: any;
 }
 
 interface HomeScreenState {

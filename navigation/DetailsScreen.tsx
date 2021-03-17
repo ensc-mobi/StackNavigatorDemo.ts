@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, Button } from "react-native";
-
-interface DetailsScreenProps {
-  route: any;
-  navigation: any;
-}
+import { DetailsScreenProps } from "./Types";
 
 export default class DetailsScreen extends Component<DetailsScreenProps, {}> {
   render() {

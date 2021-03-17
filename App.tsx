@@ -1,12 +1,13 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen, { LogoTitle } from "./components/HomeScreen";
-import DetailsScreen from "./components/DetailsScreen";
-import ModalScreen from "./components/ModalScreen";
+import HomeScreen, { LogoTitle } from "./navigation/HomeScreen";
+import DetailsScreen from "./navigation/DetailsScreen";
+import ModalScreen from "./navigation/ModalScreen";
+import { RootStackParamList } from "./navigation/Types";
 
-const MainStack = createStackNavigator();
-const RootStack = createStackNavigator();
+const MainStack = createStackNavigator<RootStackParamList>();
+const RootStack = createStackNavigator<RootStackParamList>();
 
 function MainStackScreen() {
   return (

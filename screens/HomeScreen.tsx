@@ -1,26 +1,32 @@
-import React from "react";
+import React, { Component } from "react";
 import { View, Text, Button, Image } from "react-native";
+import { HomeScreenProps } from "./Types";
 
-class LogoTitle extends React.Component {
+export class LogoTitle extends Component<{}, {}> {
   render() {
     return (
       <Image
-        source={require("./images/ENSC.jpg")}
+        source={require("../assets/ENSC.jpg")}
         style={{ width: 30, height: 30 }}
       />
     );
   }
 }
 
-export default class HomeScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    // Init counter to 0
-    this.state = { count: 0 };
-  }
+interface HomeScreenState {
+  count: number;
+}
 
-  static navigationOptions = ({ navigation }) => {
-    return {
+export default class HomeScreen extends Component<
+  HomeScreenProps,
+  HomeScreenState
+> {
+  state: HomeScreenState = { count: 0 };
+
+  componentDidMount() {
+    const { navigation } = this.props;
+
+    navigation.setOptions({
       headerLeft: () => (
         <Button
           onPress={() => navigation.navigate("MyModal")}
@@ -28,22 +34,13 @@ export default class HomeScreen extends React.Component {
           color="#fff"
         />
       ),
-      headerTitle: () => <LogoTitle />,
       headerRight: () => (
-        <Button
-          onPress={navigation.getParam("increaseCount")}
-          title="+1"
-          color="#fff"
-        />
-      )
-    };
-  };
-
-  componentDidMount() {
-    this.props.navigation.setParams({ increaseCount: this._increaseCount });
+        <Button onPress={this.increaseCount} title="+1" color="#fff" />
+      ),
+    });
   }
 
-  _increaseCount = () => {
+  increaseCount = () => {
     // Increase counter
     this.setState({ count: this.state.count + 1 });
   };
@@ -58,7 +55,7 @@ export default class HomeScreen extends React.Component {
           onPress={() => {
             this.props.navigation.navigate("Details", {
               itemId: 86,
-              otherParam: "anything you want here"
+              otherParam: "anything you want here",
             });
           }}
         />

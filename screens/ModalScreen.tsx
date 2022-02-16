@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, Button } from "react-native";
-import { ModalScreenProps } from "./Types";
+import { ModalScreenProps } from "../navigation/app-stacks";
 
 export default class ModalScreen extends Component<ModalScreenProps, {}> {
   render() {

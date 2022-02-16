@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, Button, Image } from "react-native";
-import { HomeScreenProps } from "./Types";
+import { HomeScreenProps } from "../navigation/app-stacks";
 
 export class LogoTitle extends Component<{}, {}> {
   render() {

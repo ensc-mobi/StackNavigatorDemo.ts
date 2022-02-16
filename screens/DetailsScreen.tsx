@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, Button } from "react-native";
-import { DetailsScreenProps } from "./Types";
+import { DetailsScreenProps } from "../navigation/app-stacks";
 
 export default class DetailsScreen extends Component<DetailsScreenProps, {}> {
   render() {
